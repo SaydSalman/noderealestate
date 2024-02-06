@@ -1,6 +1,12 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Listing() {
+    const handlecreate = ()=>{
+        toast.info("You Have created the list")
+    }
   return (
     <div className='container'>
         <div className='row'>
@@ -84,12 +90,13 @@ function Listing() {
             </div>
             </div>
             <div className='d-grid mt-3'>
-                <a className='btn btn-primary'>Create Listing</a>
+                <a onClick={handlecreate} className='btn btn-primary'>Create Listing</a>
             </div>
             </div>
         
           
         </div>
+        <ToastContainer autoClose={2000} theme="colored"/>
     </div>
   )
 }
